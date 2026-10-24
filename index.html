@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generator Toko Affiliate Ultra Premium v2.1 (Akurat)</title>
+    <title>Generator Toko Affiliate Ultra Premium v2.2 (Final)</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #0f766e; --primary-dark: #115e59; --bg: #f8fafc; --surface: #ffffff; --text: #0f172a; --border: #e2e8f0; }
@@ -26,8 +26,8 @@
 <body>
 
     <div class="container">
-        <h1>🚀 Generator Toko Ultra Premium v2.1</h1>
-        <p class="sub">Buat website katalog e-commerce kelas atas. Dilengkapi jam digital akurat, animasi premium, dan 7 tema warna custom.</p>
+        <h1>🚀 Generator Toko Ultra Premium v2.2</h1>
+        <p class="sub">Buat website katalog e-commerce kelas atas. Format harga otomatis (Rp), jam digital akurat, dan 7 tema warna custom.</p>
 
         <div class="form-group">
             <label>1. Nama Toko / Brand</label>
@@ -70,12 +70,11 @@
         <button class="btn" onclick="generateHTML()">⚡ Generate & Download HTML Ultra Premium</button>
 
         <div class="info-box">
-            <strong>💡 Fitur Premium yang Didapat:</strong>
+            <strong>💡 Fitur Premium yang Dihasilkan:</strong>
+            ✅ Format Harga Otomatis: "Rp 150.000" (Tanpa edit manual)<br>
             ✅ Jam Digital dengan Pasaran Jawa (100% Akurat)<br>
-            ✅ Format: Sabtu Wage 25 Januari 2026 (Tanpa koma)<br>
             ✅ Icon WhatsApp Animasi Goyang<br>
-            ✅ 7 Tema Warna Custom (Sesuai Brand Klien)<br>
-            ✅ Header Geometris yang Elegan & Responsive
+            ✅ 7 Tema Warna Custom & Responsive Sempurna
         </div>
     </div>
 
@@ -105,6 +104,7 @@
 
             const theme = themes[themeKey];
 
+            // TEMPLATE HTML YANG AKAN DI-GENERATE
             const finalHTML = `<!DOCTYPE html>
 <html lang="id">
 <head>
@@ -293,7 +293,6 @@
     <div class="footer">&copy; <span id="year"></span> <strong>${name}</strong>. Semua hak dilindungi.</div>
     
     <script>
-        // JAM DIGITAL DENGAN PASARAN JAWA (TERKALIBRASI 100% AKURAT)
         function updateClock() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
@@ -303,12 +302,9 @@
             const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
             const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
             
-            // FAKTA KUNCI: 1 Januari 2024 = Senin Pahing
             const pasaran = ['Wage', 'Kliwon', 'Legi', 'Pahing', 'Pon'];
             const refDate = new Date(2024, 0, 1); 
             const diffDays = Math.floor((now - refDate) / (1000 * 60 * 60 * 24));
-            
-            // Offset +3 karena Pahing berada di index ke-3 pada array di atas
             const pasaranIndex = (diffDays + 3) % 5;
             
             const dayName = days[now.getDay()];
@@ -322,6 +318,16 @@
         }
         setInterval(updateClock, 1000);
         updateClock();
+        
+        // FUNGSI FORMAT HARGA OTOMATIS (UPGRADE: Menggunakan toLocaleString agar lebih aman & bersih)
+        function formatHarga(harga) {
+            if (!harga) return 'Rp 0';
+            // Ambil hanya angka dari string
+            let angka = parseInt(harga.toString().replace(/[^0-9]/g, ''));
+            if (isNaN(angka)) return harga;
+            // Format ke ribuan Indonesia, lalu tambah Rp
+            return 'Rp ' + angka.toLocaleString('id-ID');
+        }
         
         const API_URL = '${api}';
         let products = [];
@@ -367,7 +373,10 @@
                         <span class="card-cat">\${p.kategori || 'Umum'}</span>
                         <h3 class="card-title">\${p.nama}</h3>
                         <p class="card-desc">\${p.deskripsi || 'Deskripsi tidak tersedia.'}</p>
-                        <div class="card-price">\${p.harga}</div>
+                        
+                        <!-- INI KUNCINYA: Tanda backslash (\\) di sini agar hasil generate menjadi \${formatHarga(p.harga)} yang valid -->
+                        <div class="card-price">\${formatHarga(p.harga)}</div>
+                        
                         <div class="card-actions">
                             \${p.shopee ? '<a href="' + p.shopee + '" target="_blank" class="btn-buy btn-shopee">🛒 Shopee</a>' : ''}
                             \${p.tiktok ? '<a href="' + p.tiktok + '" target="_blank" class="btn-buy btn-tiktok">🎵 TikTok</a>' : ''}
@@ -392,7 +401,7 @@
             a.download = 'index.html';
             a.click();
             
-            alert("✅ File HTML ULTRA PREMIUM v2.1 berhasil di-generate!\n\nAlgoritma Pasaran Jawa sekarang TERKUNCI 100% AKURAT berdasarkan fakta: 1 Jan 2024 = Pahing.");
+            alert("✅ File HTML ULTRA PREMIUM v2.2 berhasil di-generate!\n\nFormat harga 'Rp xxx.xxx' sekarang sudah otomatis dan permanen di setiap file yang dihasilkan.");
         }
     </script>
 </body>
