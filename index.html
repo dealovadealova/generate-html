@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Toko Affiliate Ultra Premium v2.1 (Akurat)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0f766e; --primary-dark: #115e59; --bg: #f8fafc; --surface: #ffffff; --text: #0f172a; --border: #e2e8f0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background: linear-gradient(135deg, #f0fdfa 0%, #f8fafc 100%); color: var(--text); padding: 40px 20px; min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; }
+        .container { max-width: 650px; width: 100%; background: var(--surface); padding: 45px; border-radius: 28px; box-shadow: 0 25px 50px -12px rgba(15, 118, 110, 0.2); border: 1px solid rgba(255,255,255,0.5); }
+        h1 { font-size: 28px; font-weight: 800; color: var(--primary); margin-bottom: 12px; text-align: center; letter-spacing: -0.5px; }
+        .sub { color: #64748b; font-size: 14px; margin-bottom: 35px; text-align: center; line-height: 1.6; }
+        .form-group { margin-bottom: 22px; }
+        label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--text); text-transform: uppercase; letter-spacing: 0.5px; }
+        input, select { width: 100%; padding: 14px 18px; border: 2px solid var(--border); border-radius: 12px; font-size: 15px; transition: all 0.3s ease; background: #fcfcfc; }
+        input:focus, select:focus { outline: none; border-color: var(--primary); background: #fff; box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.1); }
+        select { cursor: pointer; }
+        .btn { width: 100%; padding: 18px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; border: none; border-radius: 14px; font-weight: 700; font-size: 17px; cursor: pointer; transition: all 0.3s ease; margin-top: 12px; box-shadow: 0 12px 24px -5px rgba(15, 118, 110, 0.35); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 18px 35px -5px rgba(15, 118, 110, 0.45); }
+        .info-box { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 20px; border-radius: 14px; font-size: 13px; margin-top: 28px; color: #166534; line-height: 1.7; }
+        .info-box strong { display: block; margin-bottom: 10px; font-size: 15px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🚀 Generator Toko Ultra Premium v2.1</h1>
+        <p class="sub">Buat website katalog e-commerce kelas atas. Dilengkapi jam digital akurat, animasi premium, dan 7 tema warna custom.</p>
+
+        <div class="form-group">
+            <label>1. Nama Toko / Brand</label>
+            <input type="text" id="storeName" placeholder="Contoh: Berkah Tech Store">
+        </div>
+
+        <div class="form-group">
+            <label>2. Tagline / Slogan</label>
+            <input type="text" id="tagline" placeholder="Contoh: Solusi Gadget Halal & Berkah untuk Anda">
+        </div>
+
+        <div class="form-group">
+            <label>3. Pilih Tema Warna</label>
+            <select id="themeColor">
+                <option value="teal">🟢 Teal Elegance - Gadget, Teknologi, Kesehatan</option>
+                <option value="royal-blue">🔵 Royal Blue - Fashion Pria, Otomotif, Profesional</option>
+                <option value="sunset-orange">🟠 Sunset Orange - Makanan, Kreatif, Anak Muda</option>
+                <option value="rose-gold">🌸 Rose Gold - Fashion Wanita, Kosmetik, Wedding</option>
+                <option value="forest-green">🌲 Forest Green - Produk Islami, Organik, Pertanian</option>
+                <option value="midnight-purple">🟣 Midnight Purple - Premium, Luxury, Seni</option>
+                <option value="sunshine-gold">🟡 Sunshine Gold - Produk Anak, Edukasi, Ceria</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>4. Link API Google Sheets (Web App URL)</label>
+            <input type="url" id="apiUrl" placeholder="https://script.google.com/macros/s/xxxxx/exec">
+        </div>
+
+        <div class="form-group">
+            <label>5. Nomor WhatsApp (Awali 62)</label>
+            <input type="text" id="waNumber" placeholder="Contoh: 628123456789">
+        </div>
+
+        <div class="form-group">
+            <label>6. Link Logo / Foto Profil</label>
+            <input type="url" id="logoUrl" placeholder="https://... (Link gambar logo)">
+        </div>
+
+        <button class="btn" onclick="generateHTML()">⚡ Generate & Download HTML Ultra Premium</button>
+
+        <div class="info-box">
+            <strong>💡 Fitur Premium yang Didapat:</strong>
+            ✅ Jam Digital dengan Pasaran Jawa (100% Akurat)<br>
+            ✅ Format: Sabtu Wage 25 Januari 2026 (Tanpa koma)<br>
+            ✅ Icon WhatsApp Animasi Goyang<br>
+            ✅ 7 Tema Warna Custom (Sesuai Brand Klien)<br>
+            ✅ Header Geometris yang Elegan & Responsive
+        </div>
+    </div>
+
+    <script>
+        const themes = {
+            'teal': { primary: '#0f766e', primaryLight: '#ccfbf1', primaryDark: '#115e59' },
+            'royal-blue': { primary: '#1e40af', primaryLight: '#dbeafe', primaryDark: '#1e3a8a' },
+            'sunset-orange': { primary: '#ea580c', primaryLight: '#fed7aa', primaryDark: '#c2410c' },
+            'rose-gold': { primary: '#be185d', primaryLight: '#fce7f3', primaryDark: '#9f1239' },
+            'forest-green': { primary: '#166534', primaryLight: '#dcfce7', primaryDark: '#14532d' },
+            'midnight-purple': { primary: '#6b21a8', primaryLight: '#f3e8ff', primaryDark: '#581c87' },
+            'sunshine-gold': { primary: '#eab308', primaryLight: '#fef3c7', primaryDark: '#ca8a04' }
+        };
+
+        function generateHTML() {
+            const name = document.getElementById('storeName').value.trim();
+            const tagline = document.getElementById('tagline').value.trim() || 'Katalog Produk Resmi & Terpercaya';
+            const themeKey = document.getElementById('themeColor').value;
+            const api = document.getElementById('apiUrl').value.trim();
+            const wa = document.getElementById('waNumber').value.trim();
+            const logo = document.getElementById('logoUrl').value.trim();
+
+            if (!name || !api || !wa) {
+                alert("Mohon lengkapi Nama Toko, Link API, dan Nomor WhatsApp!");
+                return;
+            }
+
+            const theme = themes[themeKey];
+
+            const finalHTML = `<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${name} - Official Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --primary: ${theme.primary}; 
+            --primary-light: ${theme.primaryLight}; 
+            --primary-dark: ${theme.primaryDark};
+            --bg: #f8fafc; --card: #ffffff; 
+            --text: #0f172a; --muted: #64748b; --border: #e2e8f0; 
+            --shopee: #ee4d2d; --tiktok: #000000;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+        
+        .header { 
+            background: linear-gradient(135deg, ${theme.primary} 0%, ${theme.primaryDark} 50%, ${theme.primary} 100%); 
+            color: white; padding: 50px 20px 90px; text-align: center; position: relative; overflow: hidden; 
+        }
+        .header::before { 
+            content: ''; position: absolute; top: -30%; right: -10%; width: 500px; height: 500px; 
+            background: rgba(255,255,255,0.06); border-radius: 50%; animation: float 8s ease-in-out infinite;
+        }
+        .header::after { 
+            content: ''; position: absolute; bottom: -20%; left: -10%; width: 400px; height: 400px; 
+            background: rgba(255,255,255,0.04); border-radius: 50%; animation: float 10s ease-in-out infinite reverse;
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-30px) rotate(5deg); } }
+        
+        .header-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .header-logo { 
+            width: 100px; height: 100px; border-radius: 50%; object-fit: cover; 
+            border: 4px solid rgba(255,255,255,0.3); margin-bottom: 20px; background: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2); animation: logoFloat 3s ease-in-out infinite;
+        }
+        @keyframes logoFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        
+        .header h1 { font-size: 36px; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header .tagline { font-size: 16px; opacity: 0.95; font-weight: 500; margin-bottom: 25px; }
+        
+        .digital-clock { 
+            display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
+            padding: 15px 30px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.2);
+            font-size: 14px; font-weight: 600; letter-spacing: 0.5px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .clock-time { font-size: 20px; font-weight: 800; margin-right: 10px; }
+        .clock-date { opacity: 0.9; }
+
+        .wa-float { 
+            position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; 
+            width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+            text-decoration: none; font-size: 32px; box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5); 
+            z-index: 100; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); animation: waWiggle 2s ease-in-out infinite;
+        }
+        .wa-float:hover { transform: scale(1.15) rotate(10deg); }
+        @keyframes waWiggle { 
+            0%, 100% { transform: rotate(0deg) translateY(0); } 
+            25% { transform: rotate(-8deg) translateY(-5px); } 
+            75% { transform: rotate(8deg) translateY(-5px); } 
+        }
+
+        .controls { max-width: 1200px; margin: -50px auto 40px; padding: 0 20px; position: relative; z-index: 3; }
+        .controls-inner { 
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px);
+            padding: 25px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+            display: flex; gap: 20px; flex-wrap: wrap; align-items: center; border: 1px solid rgba(255,255,255,0.6);
+        }
+        .search-box { flex: 1; min-width: 280px; position: relative; }
+        .search-box input { 
+            width: 100%; padding: 16px 20px 16px 55px; border: 2px solid var(--border); border-radius: 50px; 
+            font-size: 15px; transition: 0.3s; background: #fff; font-weight: 500;
+        }
+        .search-box input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.1); }
+        .search-box::before { content: '🔍'; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-size: 20px; }
+        
+        .categories { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 5px; scrollbar-width: none; }
+        .categories::-webkit-scrollbar { display: none; }
+        .cat-btn { 
+            padding: 12px 24px; background: var(--bg); border: 2px solid var(--border); border-radius: 50px; 
+            font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: 0.3s; color: var(--muted);
+        }
+        .cat-btn:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+        .cat-btn.active { background: var(--primary); color: white; border-color: var(--primary); box-shadow: 0 6px 15px rgba(15, 118, 110, 0.35); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px 80px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+        
+        .card { 
+            background: var(--card); border-radius: 24px; overflow: hidden; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            border: 1px solid var(--border); display: flex; flex-direction: column; position: relative;
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); border-color: var(--primary-light); }
+        
+        .card-img-wrap { position: relative; overflow: hidden; height: 240px; background: #f1f5f9; }
+        .card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .card:hover .card-img { transform: scale(1.08); }
+        
+        .card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+        .card-cat { 
+            display: inline-block; background: var(--primary-light); color: var(--primary); 
+            padding: 7px 16px; border-radius: 50px; font-size: 11px; font-weight: 800; 
+            margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; width: fit-content;
+        }
+        .card-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; color: var(--text); }
+        .card-desc { 
+            font-size: 14px; color: var(--muted); margin-bottom: 22px; line-height: 1.7; flex: 1; 
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; 
+        }
+        .card-price { font-size: 26px; font-weight: 800; color: var(--primary); margin-bottom: 22px; letter-spacing: -0.5px; }
+        
+        .card-actions { display: flex; gap: 12px; }
+        .btn-buy { 
+            flex: 1; padding: 14px; border-radius: 14px; text-decoration: none; text-align: center; 
+            font-size: 14px; font-weight: 700; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; 
+        }
+        .btn-shopee { background: var(--shopee); color: white; }
+        .btn-shopee:hover { background: #d73211; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(238, 77, 45, 0.4); }
+        .btn-tiktok { background: var(--tiktok); color: white; }
+        .btn-tiktok:hover { background: #333; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); }
+
+        .loading, .empty { text-align: center; padding: 100px 20px; color: var(--muted); grid-column: 1/-1; }
+        .spinner { 
+            width: 60px; height: 60px; border: 5px solid var(--border); border-top-color: var(--primary); 
+            border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 25px; 
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        .footer { 
+            text-align: center; padding: 40px 20px; background: white; border-top: 1px solid var(--border); 
+            color: var(--muted); font-size: 14px; font-weight: 500;
+        }
+
+        @media (max-width: 768px) { 
+            .header { padding: 40px 20px 70px; }
+            .header h1 { font-size: 28px; } 
+            .header .tagline { font-size: 14px; }
+            .digital-clock { padding: 12px 20px; font-size: 12px; }
+            .clock-time { font-size: 16px; }
+            .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 18px; } 
+            .card-img-wrap { height: 180px; } 
+            .card-body { padding: 18px; } 
+            .card-title { font-size: 15px; } 
+            .card-price { font-size: 20px; } 
+            .btn-buy { font-size: 12px; padding: 11px; } 
+            .wa-float { width: 58px; height: 58px; font-size: 28px; bottom: 20px; right: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <img src="${logo}" alt="Logo" class="header-logo" onerror="this.style.display='none'">
+            <h1>${name}</h1>
+            <p class="tagline">${tagline}</p>
+            <div class="digital-clock">
+                <span class="clock-time" id="clockTime">00:00:00</span>
+                <span class="clock-date" id="clockDate">Memuat...</span>
+            </div>
+        </div>
+    </div>
+    
+    <a href="https://wa.me/${wa}" class="wa-float" target="_blank" title="Chat WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+    
+    <div class="controls">
+        <div class="controls-inner">
+            <div class="search-box"><input type="text" id="searchInput" placeholder="Cari produk impian Anda..."></div>
+            <div class="categories" id="catContainer"></div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="grid" id="productGrid">
+            <div class="loading"><div class="spinner"></div>Sedang memuat produk terbaik...</div>
+        </div>
+    </div>
+    
+    <div class="footer">&copy; <span id="year"></span> <strong>${name}</strong>. Semua hak dilindungi.</div>
+    
+    <script>
+        // JAM DIGITAL DENGAN PASARAN JAWA (TERKALIBRASI 100% AKURAT)
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            
+            const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+            const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+            
+            // FAKTA KUNCI: 1 Januari 2024 = Senin Pahing
+            const pasaran = ['Wage', 'Kliwon', 'Legi', 'Pahing', 'Pon'];
+            const refDate = new Date(2024, 0, 1); 
+            const diffDays = Math.floor((now - refDate) / (1000 * 60 * 60 * 24));
+            
+            // Offset +3 karena Pahing berada di index ke-3 pada array di atas
+            const pasaranIndex = (diffDays + 3) % 5;
+            
+            const dayName = days[now.getDay()];
+            const pasaranName = pasaran[pasaranIndex];
+            const date = now.getDate();
+            const month = months[now.getMonth()];
+            const year = now.getFullYear();
+            
+            document.getElementById('clockTime').textContent = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('clockDate').textContent = dayName + ' ' + pasaranName + ' ' + date + ' ' + month + ' ' + year;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+        
+        const API_URL = '${api}';
+        let products = [];
+        let activeCat = 'Semua';
+        
+        async function loadProducts() {
+            try {
+                const response = await fetch(API_URL + '?t=' + new Date().getTime());
+                products = await response.json();
+                renderCategories();
+                renderProducts();
+            } catch (error) {
+                document.getElementById('productGrid').innerHTML = '<div class="empty">⚠️ Gagal memuat produk. Pastikan Link API Google Sheets sudah benar.</div>';
+            }
+        }
+        
+        function renderCategories() {
+            const cats = ['Semua', ...new Set(products.map(p => p.kategori).filter(k => k))];
+            document.getElementById('catContainer').innerHTML = cats.map(c => 
+                '<button class="cat-btn ' + (c === activeCat ? 'active' : '') + '" onclick="filterCat(\\'' + c + '\\')">' + c + '</button>'
+            ).join('');
+        }
+        
+        function renderProducts() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = products.filter(p => 
+                (activeCat === 'Semua' || p.kategori === activeCat) && 
+                p.nama.toLowerCase().includes(search)
+            );
+            const grid = document.getElementById('productGrid');
+            
+            if (filtered.length === 0) { 
+                grid.innerHTML = '<div class="empty">Produk tidak ditemukan.</div>'; 
+                return; 
+            }
+            
+            grid.innerHTML = filtered.map(p => \`
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="\${p.gambar}" alt="\${p.nama}" class="card-img" onerror="this.src='https://via.placeholder.com/300x240/f1f5f9/64748b?text=No+Image'">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-cat">\${p.kategori || 'Umum'}</span>
+                        <h3 class="card-title">\${p.nama}</h3>
+                        <p class="card-desc">\${p.deskripsi || 'Deskripsi tidak tersedia.'}</p>
+                        <div class="card-price">\${p.harga}</div>
+                        <div class="card-actions">
+                            \${p.shopee ? '<a href="' + p.shopee + '" target="_blank" class="btn-buy btn-shopee">🛒 Shopee</a>' : ''}
+                            \${p.tiktok ? '<a href="' + p.tiktok + '" target="_blank" class="btn-buy btn-tiktok">🎵 TikTok</a>' : ''}
+                        </div>
+                    </div>
+                </div>
+            \`).join('');
+        }
+        
+        function filterCat(cat) { activeCat = cat; renderCategories(); renderProducts(); }
+        document.getElementById('searchInput').addEventListener('input', renderProducts);
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        loadProducts();
+    <\/script>
+</body>
+</html>`;
+
+            const blob = new Blob([finalHTML], { type: 'text/html' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'index.html';
+            a.click();
+            
+            alert("✅ File HTML ULTRA PREMIUM v2.1 berhasil di-generate!\n\nAlgoritma Pasaran Jawa sekarang TERKUNCI 100% AKURAT berdasarkan fakta: 1 Jan 2024 = Pahing.");
+        }
+    </script>
+</body>
+</html>
