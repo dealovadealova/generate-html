@@ -3,44 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generator Toko Affiliate Ultra Premium v2.2 (Final)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Generator Toko Katalog v3</title>
     <style>
-        :root { --primary: #0f766e; --primary-dark: #115e59; --bg: #f8fafc; --surface: #ffffff; --text: #0f172a; --border: #e2e8f0; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        :root { --primary: #0f766e; --primary-dark: #115e59; --text: #0f172a; --border: #e2e8f0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
         body { background: linear-gradient(135deg, #f0fdfa 0%, #f8fafc 100%); color: var(--text); padding: 40px 20px; min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; }
-        .container { max-width: 650px; width: 100%; background: var(--surface); padding: 45px; border-radius: 28px; box-shadow: 0 25px 50px -12px rgba(15, 118, 110, 0.2); border: 1px solid rgba(255,255,255,0.5); }
-        h1 { font-size: 28px; font-weight: 800; color: var(--primary); margin-bottom: 12px; text-align: center; letter-spacing: -0.5px; }
-        .sub { color: #64748b; font-size: 14px; margin-bottom: 35px; text-align: center; line-height: 1.6; }
-        .form-group { margin-bottom: 22px; }
-        label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--text); text-transform: uppercase; letter-spacing: 0.5px; }
-        input, select { width: 100%; padding: 14px 18px; border: 2px solid var(--border); border-radius: 12px; font-size: 15px; transition: all 0.3s ease; background: #fcfcfc; }
-        input:focus, select:focus { outline: none; border-color: var(--primary); background: #fff; box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.1); }
-        select { cursor: pointer; }
-        .btn { width: 100%; padding: 18px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; border: none; border-radius: 14px; font-weight: 700; font-size: 17px; cursor: pointer; transition: all 0.3s ease; margin-top: 12px; box-shadow: 0 12px 24px -5px rgba(15, 118, 110, 0.35); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 18px 35px -5px rgba(15, 118, 110, 0.45); }
-        .info-box { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 20px; border-radius: 14px; font-size: 13px; margin-top: 28px; color: #166534; line-height: 1.7; }
-        .info-box strong { display: block; margin-bottom: 10px; font-size: 15px; }
+        .container { max-width: 650px; width: 100%; background: #fff; padding: 40px; border-radius: 28px; box-shadow: 0 25px 50px -12px rgba(15,118,110,0.2); }
+        h1 { font-size: 26px; font-weight: 800; color: var(--primary); margin-bottom: 10px; text-align: center; }
+        .sub { color: #475569; font-size: 14px; margin-bottom: 28px; text-align: center; line-height: 1.6; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .hint { font-size: 12px; color: #64748b; margin-top: 6px; }
+        input, select { width: 100%; padding: 14px 18px; border: 2px solid var(--border); border-radius: 12px; font-size: 15px; background: #fcfcfc; }
+        input:focus, select:focus { outline: none; border-color: var(--primary); background: #fff; box-shadow: 0 0 0 4px rgba(15,118,110,0.12); }
+        input.invalid { border-color: #dc2626; }
+        .btn { width: 100%; padding: 18px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; border: none; border-radius: 14px; font-weight: 700; font-size: 17px; cursor: pointer; margin-top: 10px; }
+        .btn:hover { filter: brightness(1.05); }
+        .errbox { display: none; background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 14px 16px; border-radius: 12px; font-size: 14px; margin-bottom: 18px; line-height: 1.6; }
+        .errbox.show { display: block; }
+        .info-box { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 20px; border-radius: 14px; font-size: 13px; margin-top: 26px; color: #166534; line-height: 1.7; }
+        .info-box strong { display: block; margin-bottom: 8px; font-size: 15px; }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>🚀 Generator Toko Ultra Premium v2.2</h1>
-        <p class="sub">Buat website katalog e-commerce kelas atas. Format harga otomatis (Rp), jam digital akurat, dan 7 tema warna custom.</p>
+        <h1>🚀 Generator Toko Katalog v3</h1>
+        <p class="sub">Buat website katalog produk: harga otomatis (Rp), jam dan pasaran Jawa (WIB), dan 7 tema warna.</p>
+
+        <div class="errbox" id="errBox" role="alert"></div>
 
         <div class="form-group">
-            <label>1. Nama Toko / Brand</label>
-            <input type="text" id="storeName" placeholder="Contoh: Berkah Tech Store">
+            <label for="storeName">1. Nama Toko / Brand</label>
+            <input type="text" id="storeName" maxlength="60" placeholder="Contoh: Berkah Tech Store">
         </div>
-
         <div class="form-group">
-            <label>2. Tagline / Slogan</label>
-            <input type="text" id="tagline" placeholder="Contoh: Solusi Gadget Halal & Berkah untuk Anda">
+            <label for="tagline">2. Tagline / Slogan</label>
+            <input type="text" id="tagline" maxlength="120" placeholder="Contoh: Solusi Gadget Halal & Berkah untuk Anda">
         </div>
-
         <div class="form-group">
-            <label>3. Pilih Tema Warna</label>
+            <label for="themeColor">3. Pilih Tema Warna</label>
             <select id="themeColor">
                 <option value="teal">🟢 Teal Elegance - Gadget, Teknologi, Kesehatan</option>
                 <option value="royal-blue">🔵 Royal Blue - Fashion Pria, Otomotif, Profesional</option>
@@ -51,357 +52,434 @@
                 <option value="sunshine-gold">🟡 Sunshine Gold - Produk Anak, Edukasi, Ceria</option>
             </select>
         </div>
-
         <div class="form-group">
-            <label>4. Link API Google Sheets (Web App URL)</label>
-            <input type="url" id="apiUrl" placeholder="https://script.google.com/macros/s/xxxxx/exec">
+            <label for="apiUrl">4. Link Dokumen Google Sheets</label>
+            <input type="url" id="apiUrl" placeholder="https://docs.google.com/spreadsheets/d/xxxxx/edit">
+            <div class="hint">Harus alamat https. Pastikan Web App sudah di-deploy dengan akses "Anyone".</div>
+        </div>
+        <div class="form-group">
+            <label for="waNumber">5. Nomor WhatsApp</label>
+            <input type="text" id="waNumber" inputmode="numeric" maxlength="20" placeholder="Contoh: 08123456789 atau 628123456789">
+            <div class="hint">Boleh diawali 0 atau 62. Otomatis dibuat 62 di depan.</div>
+        </div>
+        <div class="form-group">
+            <label for="logoUrl">6. Link Logo / Foto Profil (opsional)</label>
+            <input type="url" id="logoUrl" placeholder="https://... (link gambar logo)">
         </div>
 
-        <div class="form-group">
-            <label>5. Nomor WhatsApp (Awali 62)</label>
-            <input type="text" id="waNumber" placeholder="Contoh: 628123456789">
-        </div>
-
-        <div class="form-group">
-            <label>6. Link Logo / Foto Profil</label>
-            <input type="url" id="logoUrl" placeholder="https://... (Link gambar logo)">
-        </div>
-
-        <button class="btn" onclick="generateHTML()">⚡ Generate & Download HTML Ultra Premium</button>
+        <button class="btn" onclick="generateHTML()">⚡ Generate & Download HTML</button>
 
         <div class="info-box">
-            <strong>💡 Fitur Premium yang Dihasilkan:</strong>
-            ✅ Format Harga Otomatis: "Rp 150.000" (Tanpa edit manual)<br>
-            ✅ Jam Digital dengan Pasaran Jawa (100% Akurat)<br>
-            ✅ Icon WhatsApp Animasi Goyang<br>
-            ✅ 7 Tema Warna Custom & Responsive Sempurna
+            <strong>💡 Yang dihasilkan:</strong>
+            ✅ Harga otomatis dalam format "Rp 150.000"<br>
+            ✅ Jam WIB dengan pasaran Jawa<br>
+            ✅ Tombol WhatsApp melayang<br>
+            ✅ Pencarian dan filter kategori<br>
+            ✅ Responsif untuk HP, dengan 7 tema warna
         </div>
     </div>
 
-    <script>
-        const themes = {
-            'teal': { primary: '#0f766e', primaryLight: '#ccfbf1', primaryDark: '#115e59' },
-            'royal-blue': { primary: '#1e40af', primaryLight: '#dbeafe', primaryDark: '#1e3a8a' },
-            'sunset-orange': { primary: '#ea580c', primaryLight: '#fed7aa', primaryDark: '#c2410c' },
-            'rose-gold': { primary: '#be185d', primaryLight: '#fce7f3', primaryDark: '#9f1239' },
-            'forest-green': { primary: '#166534', primaryLight: '#dcfce7', primaryDark: '#14532d' },
-            'midnight-purple': { primary: '#6b21a8', primaryLight: '#f3e8ff', primaryDark: '#581c87' },
-            'sunshine-gold': { primary: '#eab308', primaryLight: '#fef3c7', primaryDark: '#ca8a04' }
-        };
-
-        function generateHTML() {
-            const name = document.getElementById('storeName').value.trim();
-            const tagline = document.getElementById('tagline').value.trim() || 'Katalog Produk Resmi & Terpercaya';
-            const themeKey = document.getElementById('themeColor').value;
-            const api = document.getElementById('apiUrl').value.trim();
-            const wa = document.getElementById('waNumber').value.trim();
-            const logo = document.getElementById('logoUrl').value.trim();
-
-            if (!name || !api || !wa) {
-                alert("Mohon lengkapi Nama Toko, Link API, dan Nomor WhatsApp!");
-                return;
-            }
-
-            const theme = themes[themeKey];
-
-            // TEMPLATE HTML YANG AKAN DI-GENERATE
-            const finalHTML = `<!DOCTYPE html>
+    <template id="tpl">
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${name} - Official Store</title>
+    <title>{{TITLE}}</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --primary: ${theme.primary}; 
-            --primary-light: ${theme.primaryLight}; 
-            --primary-dark: ${theme.primaryDark};
-            --bg: #f8fafc; --card: #ffffff; 
-            --text: #0f172a; --muted: #64748b; --border: #e2e8f0; 
+        :root {
+            --primary: {{P_MAIN}}; --primary-light: {{P_LIGHT}}; --primary-dark: {{P_DARK}};
+            --bg: #f8fafc; --card: #ffffff; --text: #0f172a; --muted: #475569; --border: #e2e8f0;
             --shopee: #ee4d2d; --tiktok: #000000;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
-        
-        .header { 
-            background: linear-gradient(135deg, ${theme.primary} 0%, ${theme.primaryDark} 50%, ${theme.primary} 100%); 
-            color: white; padding: 50px 20px 90px; text-align: center; position: relative; overflow: hidden; 
-        }
-        .header::before { 
-            content: ''; position: absolute; top: -30%; right: -10%; width: 500px; height: 500px; 
-            background: rgba(255,255,255,0.06); border-radius: 50%; animation: float 8s ease-in-out infinite;
-        }
-        .header::after { 
-            content: ''; position: absolute; bottom: -20%; left: -10%; width: 400px; height: 400px; 
-            background: rgba(255,255,255,0.04); border-radius: 50%; animation: float 10s ease-in-out infinite reverse;
-        }
-        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-30px) rotate(5deg); } }
-        
-        .header-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
-        .header-logo { 
-            width: 100px; height: 100px; border-radius: 50%; object-fit: cover; 
-            border: 4px solid rgba(255,255,255,0.3); margin-bottom: 20px; background: white;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2); animation: logoFloat 3s ease-in-out infinite;
-        }
-        @keyframes logoFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        
-        .header h1 { font-size: 36px; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .header .tagline { font-size: 16px; opacity: 0.95; font-weight: 500; margin-bottom: 25px; }
-        
-        .digital-clock { 
-            display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
-            padding: 15px 30px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.2);
-            font-size: 14px; font-weight: 600; letter-spacing: 0.5px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        .clock-time { font-size: 20px; font-weight: 800; margin-right: 10px; }
-        .clock-date { opacity: 0.9; }
+        a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
 
-        .wa-float { 
-            position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; 
-            width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-            text-decoration: none; font-size: 32px; box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5); 
-            z-index: 100; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); animation: waWiggle 2s ease-in-out infinite;
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--primary) 100%);
+            color: white; padding: 50px 20px 90px; text-align: center; position: relative; overflow: hidden;
         }
-        .wa-float:hover { transform: scale(1.15) rotate(10deg); }
-        @keyframes waWiggle { 
-            0%, 100% { transform: rotate(0deg) translateY(0); } 
-            25% { transform: rotate(-8deg) translateY(-5px); } 
-            75% { transform: rotate(8deg) translateY(-5px); } 
-        }
+        .header::before { content: ''; position: absolute; top: -30%; right: -10%; width: 500px; height: 500px; background: rgba(255,255,255,0.06); border-radius: 50%; animation: float 8s ease-in-out infinite; }
+        .header::after { content: ''; position: absolute; bottom: -20%; left: -10%; width: 400px; height: 400px; background: rgba(255,255,255,0.04); border-radius: 50%; animation: float 10s ease-in-out infinite reverse; }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-30px) rotate(5deg); } }
+        .header-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .header-logo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 4px solid rgba(255,255,255,0.3); margin-bottom: 20px; background: white; box-shadow: 0 15px 35px rgba(0,0,0,0.2); animation: logoFloat 3s ease-in-out infinite; }
+        @keyframes logoFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .header h1 { font-size: 36px; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+        .header .tagline { font-size: 16px; opacity: 0.95; font-weight: 500; margin-bottom: 25px; }
+        .digital-clock { display: inline-block; background: rgba(255,255,255,0.18); padding: 15px 30px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.25); font-size: 14px; font-weight: 600; letter-spacing: 0.5px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .clock-time { font-size: 20px; font-weight: 800; margin-right: 10px; }
+
+        .wa-float { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5); z-index: 100; transition: transform 0.3s; animation: waWiggle 2s ease-in-out infinite; }
+        .wa-float:hover { transform: scale(1.12); }
+        @keyframes waWiggle { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-8deg); } 75% { transform: rotate(8deg); } }
 
         .controls { max-width: 1200px; margin: -50px auto 40px; padding: 0 20px; position: relative; z-index: 3; }
-        .controls-inner { 
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px);
-            padding: 25px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
-            display: flex; gap: 20px; flex-wrap: wrap; align-items: center; border: 1px solid rgba(255,255,255,0.6);
-        }
+        .controls-inner { background: rgba(255,255,255,0.97); padding: 25px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); display: flex; gap: 20px; flex-wrap: wrap; align-items: center; border: 1px solid rgba(255,255,255,0.6); }
         .search-box { flex: 1; min-width: 280px; position: relative; }
-        .search-box input { 
-            width: 100%; padding: 16px 20px 16px 55px; border: 2px solid var(--border); border-radius: 50px; 
-            font-size: 15px; transition: 0.3s; background: #fff; font-weight: 500;
-        }
-        .search-box input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.1); }
+        .search-box input { width: 100%; padding: 16px 20px 16px 55px; border: 2px solid var(--border); border-radius: 50px; font-size: 15px; background: #fff; font-weight: 500; }
+        .search-box input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(15,118,110,0.12); }
         .search-box::before { content: '🔍'; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-size: 20px; }
-        
-        .categories { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 5px; scrollbar-width: none; }
+        .categories { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 5px; scrollbar-width: none; width: 100%; }
         .categories::-webkit-scrollbar { display: none; }
-        .cat-btn { 
-            padding: 12px 24px; background: var(--bg); border: 2px solid var(--border); border-radius: 50px; 
-            font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: 0.3s; color: var(--muted);
-        }
-        .cat-btn:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
-        .cat-btn.active { background: var(--primary); color: white; border-color: var(--primary); box-shadow: 0 6px 15px rgba(15, 118, 110, 0.35); }
+        .cat-btn { padding: 12px 24px; background: var(--bg); border: 2px solid var(--border); border-radius: 50px; font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: 0.3s; color: var(--muted); }
+        .cat-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .cat-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px 80px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-        
-        .card { 
-            background: var(--card); border-radius: 24px; overflow: hidden; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            border: 1px solid var(--border); display: flex; flex-direction: column; position: relative;
-        }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); border-color: var(--primary-light); }
-        
+        .card { background: var(--card); border-radius: 24px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
         .card-img-wrap { position: relative; overflow: hidden; height: 240px; background: #f1f5f9; }
-        .card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-        .card:hover .card-img { transform: scale(1.08); }
-        
+        .card-img { width: 100%; height: 100%; object-fit: cover; }
         .card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-        .card-cat { 
-            display: inline-block; background: var(--primary-light); color: var(--primary); 
-            padding: 7px 16px; border-radius: 50px; font-size: 11px; font-weight: 800; 
-            margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; width: fit-content;
-        }
-        .card-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; color: var(--text); }
-        .card-desc { 
-            font-size: 14px; color: var(--muted); margin-bottom: 22px; line-height: 1.7; flex: 1; 
-            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; 
-        }
-        .card-price { font-size: 26px; font-weight: 800; color: var(--primary); margin-bottom: 22px; letter-spacing: -0.5px; }
-        
+        .card-cat { display: inline-block; background: var(--primary-light); color: var(--primary-dark); padding: 7px 16px; border-radius: 50px; font-size: 11px; font-weight: 800; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; width: fit-content; }
+        .card-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; }
+        .card-desc { font-size: 14px; color: var(--muted); margin-bottom: 22px; line-height: 1.7; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .card-price { font-size: 26px; font-weight: 800; color: var(--primary-dark); margin-bottom: 22px; letter-spacing: -0.5px; }
         .card-actions { display: flex; gap: 12px; }
-        .btn-buy { 
-            flex: 1; padding: 14px; border-radius: 14px; text-decoration: none; text-align: center; 
-            font-size: 14px; font-weight: 700; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; 
-        }
+        .btn-buy { flex: 1; padding: 14px; border-radius: 14px; text-decoration: none; text-align: center; font-size: 14px; font-weight: 700; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; }
         .btn-shopee { background: var(--shopee); color: white; }
-        .btn-shopee:hover { background: #d73211; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(238, 77, 45, 0.4); }
+        .btn-shopee:hover { background: #d73211; }
         .btn-tiktok { background: var(--tiktok); color: white; }
-        .btn-tiktok:hover { background: #333; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); }
+        .btn-tiktok:hover { background: #333; }
 
-        .loading, .empty { text-align: center; padding: 100px 20px; color: var(--muted); grid-column: 1/-1; }
-        .spinner { 
-            width: 60px; height: 60px; border: 5px solid var(--border); border-top-color: var(--primary); 
-            border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 25px; 
-        }
+        .state { text-align: center; padding: 100px 20px; color: var(--muted); grid-column: 1/-1; }
+        .spinner { width: 60px; height: 60px; border: 5px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 25px; }
         @keyframes spin { to { transform: rotate(360deg); } }
-        
-        .footer { 
-            text-align: center; padding: 40px 20px; background: white; border-top: 1px solid var(--border); 
-            color: var(--muted); font-size: 14px; font-weight: 500;
-        }
+        .retry { margin-top: 16px; padding: 12px 24px; background: var(--primary); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; }
 
-        @media (max-width: 768px) { 
+        .footer { text-align: center; padding: 40px 20px; background: white; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; font-weight: 500; }
+
+        @media (max-width: 768px) {
             .header { padding: 40px 20px 70px; }
-            .header h1 { font-size: 28px; } 
+            .header h1 { font-size: 28px; }
             .header .tagline { font-size: 14px; }
             .digital-clock { padding: 12px 20px; font-size: 12px; }
             .clock-time { font-size: 16px; }
-            .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 18px; } 
-            .card-img-wrap { height: 180px; } 
-            .card-body { padding: 18px; } 
-            .card-title { font-size: 15px; } 
-            .card-price { font-size: 20px; } 
-            .btn-buy { font-size: 12px; padding: 11px; } 
-            .wa-float { width: 58px; height: 58px; font-size: 28px; bottom: 20px; right: 20px; }
+            .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 18px; }
+            .card-img-wrap { height: 180px; }
+            .card-body { padding: 18px; }
+            .card-title { font-size: 15px; }
+            .card-price { font-size: 20px; }
+            .btn-buy { font-size: 12px; padding: 11px; }
+            .wa-float { width: 58px; height: 58px; bottom: 20px; right: 20px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
         }
     </style>
 </head>
 <body>
-    <div class="header">
+    <header class="header">
         <div class="header-content">
-            <img src="${logo}" alt="Logo" class="header-logo" onerror="this.style.display='none'">
-            <h1>${name}</h1>
-            <p class="tagline">${tagline}</p>
-            <div class="digital-clock">
+            {{LOGO_TAG}}
+            <h1>{{NAME}}</h1>
+            <p class="tagline">{{TAGLINE}}</p>
+            <div class="digital-clock" aria-live="off">
                 <span class="clock-time" id="clockTime">00:00:00</span>
-                <span class="clock-date" id="clockDate">Memuat...</span>
+                <span id="clockDate">Memuat...</span>
             </div>
         </div>
-    </div>
-    
-    <a href="https://wa.me/${wa}" class="wa-float" target="_blank" title="Chat WhatsApp">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+    </header>
+
+    <a href="https://wa.me/{{WA}}" class="wa-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp" title="Chat WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white" aria-hidden="true">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
     </a>
-    
-    <div class="controls">
+
+    <section class="controls">
         <div class="controls-inner">
-            <div class="search-box"><input type="text" id="searchInput" placeholder="Cari produk impian Anda..."></div>
-            <div class="categories" id="catContainer"></div>
+            <div class="search-box"><input type="search" id="searchInput" placeholder="Cari produk impian Anda..." aria-label="Cari produk"></div>
+            <div class="categories" id="catContainer" role="group" aria-label="Kategori"></div>
         </div>
-    </div>
-    
-    <div class="container">
-        <div class="grid" id="productGrid">
-            <div class="loading"><div class="spinner"></div>Sedang memuat produk terbaik...</div>
+    </section>
+
+    <main class="container">
+        <div class="grid" id="productGrid" aria-live="polite">
+            <div class="state"><div class="spinner"></div>Sedang memuat produk terbaik...</div>
         </div>
-    </div>
-    
-    <div class="footer">&copy; <span id="year"></span> <strong>${name}</strong>. Semua hak dilindungi.</div>
-    
+    </main>
+
+    <footer class="footer">&copy; <span id="year"></span> <strong>{{NAME}}</strong>. Semua hak dilindungi.</footer>
+
     <script>
+        const API_URL = {{API}};
+        const PLACEHOLDER = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="300" height="240"><rect width="100%" height="100%" fill="#f1f5f9"/><text x="50%" y="50%" fill="#475569" font-family="sans-serif" font-size="18" text-anchor="middle">Tanpa foto</text></svg>');
+
+        // ===== Utilitas =====
+        function esc(s) {
+            return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        }
+        function safeUrl(u) {
+            try {
+                const x = new URL(String(u || '').trim());
+                return (x.protocol === 'https:' || x.protocol === 'http:') ? x.href : '';
+            } catch (e) { return ''; }
+        }
+        function formatHarga(h) {
+            const n = parseInt(String(h == null ? '' : h).replace(/[^0-9]/g, ''), 10);
+            if (!n) return 'Hubungi kami';
+            return 'Rp ' + n.toLocaleString('id-ID');
+        }
+
+        // ===== Jam & pasaran (WIB, UTC+7 tetap) =====
         function updateClock() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            
+            const d = new Date(Date.now() + 7 * 3600 * 1000);
+            const pad = n => String(n).padStart(2, '0');
             const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
             const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-            
             const pasaran = ['Wage', 'Kliwon', 'Legi', 'Pahing', 'Pon'];
-            const refDate = new Date(2024, 0, 1); 
-            const diffDays = Math.floor((now - refDate) / (1000 * 60 * 60 * 24));
-            const pasaranIndex = (diffDays + 3) % 5;
-            
-            const dayName = days[now.getDay()];
-            const pasaranName = pasaran[pasaranIndex];
-            const date = now.getDate();
-            const month = months[now.getMonth()];
-            const year = now.getFullYear();
-            
-            document.getElementById('clockTime').textContent = hours + ':' + minutes + ':' + seconds;
-            document.getElementById('clockDate').textContent = dayName + ' ' + pasaranName + ' ' + date + ' ' + month + ' ' + year;
+            const diff = Math.floor((Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()) - Date.UTC(2024, 0, 1)) / 86400000);
+            const p = pasaran[(((diff + 3) % 5) + 5) % 5];
+            document.getElementById('clockTime').textContent = pad(d.getUTCHours()) + ':' + pad(d.getUTCMinutes()) + ':' + pad(d.getUTCSeconds());
+            document.getElementById('clockDate').textContent = days[d.getUTCDay()] + ' ' + p + ', ' + d.getUTCDate() + ' ' + months[d.getUTCMonth()] + ' ' + d.getUTCFullYear() + ' · WIB';
         }
         setInterval(updateClock, 1000);
         updateClock();
-        
-        // FUNGSI FORMAT HARGA OTOMATIS (UPGRADE: Menggunakan toLocaleString agar lebih aman & bersih)
-        function formatHarga(harga) {
-            if (!harga) return 'Rp 0';
-            // Ambil hanya angka dari string
-            let angka = parseInt(harga.toString().replace(/[^0-9]/g, ''));
-            if (isNaN(angka)) return harga;
-            // Format ke ribuan Indonesia, lalu tambah Rp
-            return 'Rp ' + angka.toLocaleString('id-ID');
-        }
-        
-        const API_URL = '${api}';
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // ===== Data produk =====
         let products = [];
         let activeCat = 'Semua';
-        
+        let query = '';
+
+        // JSONP: memuat data dari Apps Script tanpa kena blokir CORS
+        function loadJsonp(url) {
+            return new Promise((resolve, reject) => {
+                const cb = '__katalogCb_' + Date.now() + '_' + Math.floor(Math.random() * 1e6);
+                const s = document.createElement('script');
+                const timer = setTimeout(() => { cleanup(); reject(new Error('timeout')); }, 15000);
+                function cleanup() { clearTimeout(timer); delete window[cb]; s.remove(); }
+                window[cb] = data => { cleanup(); resolve(data); };
+                s.onerror = () => { cleanup(); reject(new Error('network')); };
+                s.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + cb + '&t=' + Date.now();
+                document.head.appendChild(s);
+            });
+        }
+
+        // Judul kolom sheet → nama field
+        const SHEET_MAP = {
+            'nama produk': 'nama', 'harga': 'harga', 'deskripsi': 'deskripsi',
+            'url gambar': 'gambar', 'kategori': 'kategori',
+            'link shopee': 'shopee', 'link tiktok': 'tiktok'
+        };
+
+        // Baca sheet langsung lewat endpoint gviz Google (tanpa Apps Script).
+        // Sheet harus di-share "Anyone with the link: Viewer".
+        function loadSheet(id) {
+            return new Promise((resolve, reject) => {
+                const cb = '__katalogGv_' + Date.now() + '_' + Math.floor(Math.random() * 1e6);
+                const s = document.createElement('script');
+                const timer = setTimeout(() => { cleanup(); reject(new Error('timeout')); }, 15000);
+                function cleanup() { clearTimeout(timer); delete window[cb]; s.remove(); }
+                window[cb] = resp => {
+                    cleanup();
+                    try {
+                        const t = resp.table;
+                        const keys = t.cols.map(c => SHEET_MAP[String(c.label || '').trim().toLowerCase().replace(/\s+/g, ' ')] || '');
+                        const rows = t.rows.map(r => {
+                            const o = {};
+                            keys.forEach((k, i) => {
+                                if (!k) return;
+                                const c = (r.c || [])[i];
+                                o[k] = c ? (c.v != null ? c.v : (c.f || '')) : '';
+                            });
+                            return o;
+                        }).filter(o => String(o.nama || '').trim() !== '');
+                        resolve(rows);
+                    } catch (e) { reject(e); }
+                };
+                s.onerror = () => { cleanup(); reject(new Error('network')); };
+                s.src = 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(id) +
+                    '/gviz/tq?headers=1&tqx=' + encodeURIComponent('responseHandler:' + cb) +
+                    '&tq=' + encodeURIComponent('select *');
+                document.head.appendChild(s);
+            });
+        }
+
         async function loadProducts() {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '<div class="state"><div class="spinner"></div>Sedang memuat produk terbaik...</div>';
             try {
-                const response = await fetch(API_URL + '?t=' + new Date().getTime());
-                products = await response.json();
+                const m = API_URL.match(/\/spreadsheets\/d\/([A-Za-z0-9_-]+)/);
+                const data = m ? await loadSheet(m[1]) : await loadJsonp(API_URL);
+                if (!Array.isArray(data)) throw new Error('format');
+                products = data.filter(p => p && typeof p === 'object' && String(p.nama || '').trim() !== '');
                 renderCategories();
                 renderProducts();
-            } catch (error) {
-                document.getElementById('productGrid').innerHTML = '<div class="empty">⚠️ Gagal memuat produk. Pastikan Link API Google Sheets sudah benar.</div>';
+            } catch (err) {
+                grid.innerHTML = '<div class="state">⚠️ Produk belum bisa dimuat.<br><button class="retry" id="retryBtn">Coba lagi</button></div>';
             }
         }
-        
-        function renderCategories() {
-            const cats = ['Semua', ...new Set(products.map(p => p.kategori).filter(k => k))];
-            document.getElementById('catContainer').innerHTML = cats.map(c => 
-                '<button class="cat-btn ' + (c === activeCat ? 'active' : '') + '" onclick="filterCat(\\'' + c + '\\')">' + c + '</button>'
-            ).join('');
-        }
-        
-        function renderProducts() {
-            const search = document.getElementById('searchInput').value.toLowerCase();
-            const filtered = products.filter(p => 
-                (activeCat === 'Semua' || p.kategori === activeCat) && 
-                p.nama.toLowerCase().includes(search)
-            );
-            const grid = document.getElementById('productGrid');
-            
-            if (filtered.length === 0) { 
-                grid.innerHTML = '<div class="empty">Produk tidak ditemukan.</div>'; 
-                return; 
-            }
-            
-            grid.innerHTML = filtered.map(p => \`
-                <div class="card">
-                    <div class="card-img-wrap">
-                        <img src="\${p.gambar}" alt="\${p.nama}" class="card-img" onerror="this.src='https://via.placeholder.com/300x240/f1f5f9/64748b?text=No+Image'">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-cat">\${p.kategori || 'Umum'}</span>
-                        <h3 class="card-title">\${p.nama}</h3>
-                        <p class="card-desc">\${p.deskripsi || 'Deskripsi tidak tersedia.'}</p>
-                        
-                        <!-- INI KUNCINYA: Tanda backslash (\\) di sini agar hasil generate menjadi \${formatHarga(p.harga)} yang valid -->
-                        <div class="card-price">\${formatHarga(p.harga)}</div>
-                        
-                        <div class="card-actions">
-                            \${p.shopee ? '<a href="' + p.shopee + '" target="_blank" class="btn-buy btn-shopee">🛒 Shopee</a>' : ''}
-                            \${p.tiktok ? '<a href="' + p.tiktok + '" target="_blank" class="btn-buy btn-tiktok">🎵 TikTok</a>' : ''}
-                        </div>
-                    </div>
-                </div>
-            \`).join('');
-        }
-        
-        function filterCat(cat) { activeCat = cat; renderCategories(); renderProducts(); }
-        document.getElementById('searchInput').addEventListener('input', renderProducts);
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        loadProducts();
-    <\/script>
-</body>
-</html>`;
 
-            const blob = new Blob([finalHTML], { type: 'text/html' });
+        function renderCategories() {
+            const box = document.getElementById('catContainer');
+            const cats = ['Semua'].concat([...new Set(products.map(p => String(p.kategori || '').trim()).filter(Boolean))]);
+            box.innerHTML = '';
+            cats.forEach(c => {
+                const b = document.createElement('button');
+                b.className = 'cat-btn' + (c === activeCat ? ' active' : '');
+                b.dataset.cat = c;
+                b.textContent = c;
+                box.appendChild(b);
+            });
+        }
+
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            if (products.length === 0) {
+                grid.innerHTML = '<div class="state">Belum ada produk.</div>';
+                return;
+            }
+            const q = query.toLowerCase();
+            const filtered = products.filter(p =>
+                (activeCat === 'Semua' || String(p.kategori || '').trim() === activeCat) &&
+                String(p.nama).toLowerCase().includes(q)
+            );
+            if (filtered.length === 0) {
+                grid.innerHTML = '<div class="state">Produk tidak ditemukan.</div>';
+                return;
+            }
+            grid.innerHTML = filtered.map(p => {
+                const img = safeUrl(p.gambar) || PLACEHOLDER;
+                const shopee = safeUrl(p.shopee);
+                const tiktok = safeUrl(p.tiktok);
+                return '<article class="card">' +
+                    '<div class="card-img-wrap"><img src="' + esc(img) + '" alt="' + esc(p.nama) + '" class="card-img" loading="lazy" onerror="this.onerror=null;this.src=PLACEHOLDER"></div>' +
+                    '<div class="card-body">' +
+                        '<span class="card-cat">' + esc(p.kategori || 'Umum') + '</span>' +
+                        '<h3 class="card-title">' + esc(p.nama) + '</h3>' +
+                        '<p class="card-desc">' + esc(p.deskripsi || 'Deskripsi tidak tersedia.') + '</p>' +
+                        '<div class="card-price">' + esc(formatHarga(p.harga)) + '</div>' +
+                        '<div class="card-actions">' +
+                            (shopee ? '<a href="' + esc(shopee) + '" target="_blank" rel="noopener" class="btn-buy btn-shopee">🛒 Shopee</a>' : '') +
+                            (tiktok ? '<a href="' + esc(tiktok) + '" target="_blank" rel="noopener" class="btn-buy btn-tiktok">🎵 TikTok</a>' : '') +
+                        '</div>' +
+                    '</div>' +
+                '</article>';
+            }).join('');
+        }
+
+        // ===== Interaksi (event delegation, aman untuk teks apa pun) =====
+        document.getElementById('catContainer').addEventListener('click', e => {
+            const b = e.target.closest('button[data-cat]');
+            if (!b) return;
+            activeCat = b.dataset.cat;
+            renderCategories();
+            renderProducts();
+        });
+        document.getElementById('productGrid').addEventListener('click', e => {
+            if (e.target.closest('#retryBtn')) loadProducts();
+        });
+        document.getElementById('searchInput').addEventListener('input', e => {
+            query = e.target.value;
+            renderProducts();
+        });
+
+        loadProducts();
+    </script>
+</body>
+</html>
+    </template>
+
+    <script>
+        const themes = {
+            'teal':            { main: '#0f766e', light: '#ccfbf1', dark: '#115e59' },
+            'royal-blue':      { main: '#1e40af', light: '#dbeafe', dark: '#1e3a8a' },
+            'sunset-orange':   { main: '#c2410c', light: '#fed7aa', dark: '#9a3412' },
+            'rose-gold':       { main: '#be185d', light: '#fce7f3', dark: '#9f1239' },
+            'forest-green':    { main: '#166534', light: '#dcfce7', dark: '#14532d' },
+            'midnight-purple': { main: '#6b21a8', light: '#f3e8ff', dark: '#581c87' },
+            'sunshine-gold':   { main: '#a16207', light: '#fef3c7', dark: '#854d0e' }
+        };
+
+        function esc(s) {
+            return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        }
+        function safeUrl(u) {
+            try {
+                const x = new URL(u);
+                return (x.protocol === 'https:' || x.protocol === 'http:') ? x.href : '';
+            } catch (e) { return ''; }
+        }
+        function normWA(raw) {
+            let d = String(raw || '').replace(/\D/g, '');
+            if (d.startsWith('00')) d = d.slice(2);
+            if (d.startsWith('0')) d = '62' + d.slice(1);
+            else if (d.startsWith('8')) d = '62' + d;
+            return d;
+        }
+
+        function showError(list) {
+            const box = document.getElementById('errBox');
+            box.innerHTML = list.map(esc).join('<br>');
+            box.classList.add('show');
+            box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        function clearError() {
+            const box = document.getElementById('errBox');
+            box.classList.remove('show');
+            box.innerHTML = '';
+            document.querySelectorAll('input.invalid').forEach(i => i.classList.remove('invalid'));
+        }
+
+        function generateHTML() {
+            clearError();
+            const name = document.getElementById('storeName').value.trim();
+            const tagline = document.getElementById('tagline').value.trim() || 'Katalog Produk Resmi & Terpercaya';
+            const themeKey = document.getElementById('themeColor').value;
+            const apiRaw = document.getElementById('apiUrl').value.trim();
+            const waRaw = document.getElementById('waNumber').value;
+            const logoRaw = document.getElementById('logoUrl').value.trim();
+
+            const errors = [];
+            const bad = [];
+            if (!name) { errors.push('Nama toko wajib diisi.'); bad.push('storeName'); }
+            const api = safeUrl(apiRaw);
+            if (!api || !api.startsWith('https://')) { errors.push('Link dokumen Google Sheets harus berupa alamat https yang benar.'); bad.push('apiUrl'); }
+            const wa = normWA(waRaw);
+            if (!/^62\d{8,13}$/.test(wa)) { errors.push('Nomor WhatsApp tidak valid. Contoh: 08123456789.'); bad.push('waNumber'); }
+            let logo = '';
+            if (logoRaw) {
+                logo = safeUrl(logoRaw);
+                if (!logo) { errors.push('Link logo tidak valid. Kosongkan jika tidak pakai logo.'); bad.push('logoUrl'); }
+            }
+            if (errors.length) {
+                bad.forEach(id => document.getElementById(id).classList.add('invalid'));
+                showError(errors);
+                return;
+            }
+
+            const theme = themes[themeKey];
+            const logoTag = logo ? '<img src="' + esc(logo) + '" alt="Logo" class="header-logo" onerror="this.style.display=\'none\'">' : '';
+            const apiJs = JSON.stringify(api).replace(/</g, '\\u003c');
+
+            const map = {
+                '{{TITLE}}': esc(name) + ' - Official Store',
+                '{{NAME}}': esc(name),
+                '{{TAGLINE}}': esc(tagline),
+                '{{LOGO_TAG}}': logoTag,
+                '{{WA}}': wa,
+                '{{API}}': apiJs,
+                '{{P_MAIN}}': theme.main,
+                '{{P_LIGHT}}': theme.light,
+                '{{P_DARK}}': theme.dark
+            };
+            let html = document.getElementById('tpl').innerHTML;
+            Object.keys(map).forEach(k => { html = html.split(k).join(map[k]); });
+
+            const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
             a.download = 'index.html';
+            document.body.appendChild(a);
             a.click();
-            
-            alert("✅ File HTML ULTRA PREMIUM v2.2 berhasil di-generate!\n\nFormat harga 'Rp xxx.xxx' sekarang sudah otomatis dan permanen di setiap file yang dihasilkan.");
+            a.remove();
+            setTimeout(() => URL.revokeObjectURL(a.href), 1000);
         }
     </script>
 </body>
